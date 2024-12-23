@@ -8,9 +8,9 @@ def prepare_dataset():
     split_dataset()
 
 def run_neural_network():
-    y_test, y_pred = train_model()
-    evaluate_model(y_test, y_pred)
+    y_pred = train_model((12,7,5), 1000, 0.001)
+    evaluate_model(y_pred)
 
 if __name__ == '__main__':
-    prepare_dataset()
+    # prepare_dataset()
     run_neural_network()

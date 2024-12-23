@@ -4,6 +4,9 @@ from sklearn.model_selection import train_test_split
 def split_dataset():
     df = pd.read_csv('dataset/processed_dataset.csv')
 
+    if 'User ID' in df.columns:
+        df = df.drop(columns=['User ID'])
+
     X = df.iloc[:, :-1]
     y = df.iloc[:, -1]
     
